@@ -1,11 +1,8 @@
-# Anime Quiz Game - Skateboard Version
-
-score = 0
+score = 0  
 
 print("🎌 Welcome to the Anime Quiz Game! 🎌")
 print("Answer by typing A, B, C, or D.\n")
 
-# Question 1
 print("1) Who is the main character of Naruto?")
 print("A) Sasuke")
 print("B) Naruto")
@@ -16,7 +13,7 @@ answer = input("Your answer: ").upper()
 
 if answer == "B":
     print("Correct! 🎉\n")
-    score += 1
+    score = score + 1 
 else:
     print("Wrong! The correct answer is B.\n")
 
@@ -27,15 +24,14 @@ print("B) Demon Slayer")
 print("C) Attack on Titan")
 print("D) Bleach")
 
-answer = input("Your answer: ").upper()
+user_answer = input("Your answer: ").upper()
 
-if answer == "C":
+if user_answer == "C":
     print("Correct! 🎉\n")
-    score += 1
+    score = score + 1
 else:
     print("Wrong! The correct answer is C.\n")
 
-# Question 3
 print("3) Who uses a sword called Zangetsu?")
 print("A) Luffy")
 print("B) Goku")
@@ -46,13 +42,13 @@ answer = input("Your answer: ").upper()
 
 if answer == "C":
     print("Correct! 🎉\n")
-    score += 1
+    score = score + 1
 else:
     print("Wrong! The correct answer is C.\n")
 
-# Final Results
 print("🏁 Quiz Finished!")
-print(f"Your final score: {score}/3")
+total_questions = 3
+print(f"Your final score: {score}/{total_questions}")
 
 if score == 3:
     print("🔥 Anime Master!")
