@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anime Quiz Game</title>
+</head>
+<body>
+
+<h1>🎌 Anime Quiz Game 🎌</h1>
+<p id="question"></p>
+
+<div id="options"></div>
+<p id="feedback"></p>
+
+<h2 id="finalScore"></h2>
+<h3 id="finalMessage"></h3>
+
+<script>
+const questions = [
+    {
+        question: "1) Who is the main character of Naruto?",
+        options: ["A) Sasuke", "B) Naruto", "C) Kakashi", "D) Itachi"],
+        answer: "B"
+    },
+    {
+        question: "2) What anime features the Survey Corps?",
+        options: ["A) One Piece", "B) Demon Slayer", "C) Attack on Titan", "D) Bleach"],
+        answer: "C"
+    },
+    {
+        question: "3) Who uses a sword called Zangetsu?",
+        options: ["A) Luffy", "B) Goku", "C) Ichigo", "D) Tanjiro"],
+        answer: "C"
+    },
+    {
+        question: "4) What is Luffy’s pirate crew called?",
+        options: ["A) Blackbeard Pirates", "B) Red Hair Pirates", "C) Straw Hat Pirates", "D) Whitebeard Pirates"],
+        answer: "C"
+    },
+    {
+        question: "5) Who is the Flame Hashira in Demon Slayer?",
+        options: ["A) Giyu", "B) Rengoku", "C) Tengen", "D) Muichiro"],
+        answer: "B"
+    },
+    {
+        question: "6) What notebook allows the user to kill by writing a name?",
+        options: ["A) Black Book", "B) Death Scroll", "C) Death Note", "D) Soul Journal"],
+        answer: "C"
+    },
+    {
+        question: "7) What is Goku’s Saiyan race called?",
+        options: ["A) Namekian", "B) Earthling", "C) Saiyan", "D) Titan"],
+        answer: "C"
+    },
+    {
+        question: "8) Who is the captain of the Black Bulls?",
+        options: ["A) Yuno", "B) Asta", "C) Yami", "D) Noelle"],
+        answer: "C"
+    },
+    {
+        question: "9) What energy do sorcerers use in Jujutsu Kaisen?",
+        options: ["A) Chakra", "B) Nen", "C) Cursed Energy", "D) Reiatsu"],
+        answer: "C"
+    },
+    {
+        question: "10) What anime takes place in the Soul Society?",
+        options: ["A) Naruto", "B) Bleach", "C) One Piece", "D) Fairy Tail"],
+        answer: "B"
+    },
+    {
+        question: "11) Who fights Titans with dual blades?",
+        options: ["A) Eren", "B) Levi", "C) Mikasa", "D) Armin"],
+        answer: "B"
+    },
+    {
+        question: "12) What is Tanjiro’s breathing style?",
+        options: ["A) Water", "B) Flame", "C) Thunder", "D) Wind"],
+        answer: "A"
+    },
+    {
+        question: "13) Who is the protagonist of My Hero Academia?",
+        options: ["A) Bakugo", "B) Todoroki", "C) Deku", "D) All Might"],
+        answer: "C"
+    },
+    {
+        question: "14) What anime uses Alchemy and Equivalent Exchange?",
+        options: ["A) Fairy Tail", "B) Fullmetal Alchemist", "C) Bleach", "D) Tokyo Ghoul"],
+        answer: "B"
+    },
+    {
+        question: "15) Who holds the title of strongest swordsman?",
+        options: ["A) Sanji", "B) Zoro", "C) Mihawk", "D) Shanks"],
+        answer: "C"
+    }
+];
+
+let index = 0;
+let score = 0;
+
+function showQuestion() {
+    document.getElementById("feedback").innerText = "";
+    document.getElementById("question").innerText = questions[index].question;
+
+    const optionsDiv = document.getElementById("options");
+    optionsDiv.innerHTML = "";
+
+    questions[index].options.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.innerText = opt;
+        btn.onclick = () => checkAnswer(opt[0]);
+        optionsDiv.appendChild(btn);
+        optionsDiv.appendChild(document.createElement("br"));
+    });
+}
+
+function checkAnswer(choice) {
+    if (choice === questions[index].answer) {
+        score++;
+        document.getElementById("feedback").innerText = "Correct! 🎉";
+    } else {
+        document.getElementById("feedback").innerText =
+            "Wrong! 😅 Correct answer: " + questions[index].answer;
+    }
+
+    index++;
+
+    if (index < questions.length) {
+        setTimeout(showQuestion, 800);
+    } else {
+        setTimeout(showResults, 800);
+    }
+}
+
+function showResults() {
+    document.getElementById("question").innerText = "";
+    document.getElementById("options").innerHTML = "";
+
+    document.getElementById("finalScore").innerText =
+        "🏁 Final Score: " + score + " / " + questions.length;
+
+    let msg = "";
+    if (score === questions.length) msg = "🔥 Anime Master!";
+    else if (score >= questions.length * 0.7) msg = "😄 Great job!";
+    else if (score >= questions.length * 0.4) msg = "🙂 Not bad!";
+    else msg = "😅 Time for an anime marathon!";
+
+    document.getElementById("finalMessage").innerText = msg;
+}
+
+showQuestion();
+</script>
+
+</body>
+</html>
