@@ -46,8 +46,24 @@ if answer == "C":
 else:
     print("Wrong! The correct answer is C.\n")
 
+print("4) Who is NOT in the Big 3")
+print("A) Fairy Tail")
+print("B) Demon Slayer")
+print("C) Attack on Titan")
+print("D) Rent A Girlfriend")
+print("E) All of the Above")
+
+user_answer = input("Your answer: ").upper()
+
+if user_answer == "E":
+    print("Correct! 🎉\n")
+    score = score + 1
+else:
+    print("Wrong! The correct answer is E.\n")
+
+
 print("🏁 Quiz Finished!")
-total_questions = 3
+total_questions = 4
 print(f"Your final score: {score}/{total_questions}")
 
 if score == 3:
