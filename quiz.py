@@ -1,76 +1,10 @@
-score = 0  
+from flask import Flask, render_template
 
-print("🎌 Welcome to the Anime Quiz Game! 🎌")
-print("Answer by typing A, B, C, or D.\n")
+app = Flask(__name__)
 
-print("1) Who is the main character of Naruto?")
-print("A) Sasuke")
-print("B) Naruto")
-print("C) Kakashi")
-print("D) Itachi")
+@app.route("/")
+def quiz():
+    return render_template("anime_quiz.html")
 
-answer = input("Your answer: ").upper()
-
-if answer == "B":
-    print("Correct! 🎉\n")
-    score = score + 1 
-else:
-    print("Wrong! The correct answer is B.\n")
-
-# Question 2
-print("2) What anime features the Survey Corps?")
-print("A) One Piece")
-print("B) Demon Slayer")
-print("C) Attack on Titan")
-print("D) Bleach")
-
-user_answer = input("Your answer: ").upper()
-
-if user_answer == "C":
-    print("Correct! 🎉\n")
-    score = score + 1
-else:
-    print("Wrong! The correct answer is C.\n")
-
-print("3) Who uses a sword called Zangetsu?")
-print("A) Luffy")
-print("B) Goku")
-print("C) Ichigo")
-print("D) Tanjiro")
-
-answer = input("Your answer: ").upper()
-
-if answer == "C":
-    print("Correct! 🎉\n")
-    score = score + 1
-else:
-    print("Wrong! The correct answer is C.\n")
-
-print("4) Who is NOT in the Big 3")
-print("A) Fairy Tail")
-print("B) Demon Slayer")
-print("C) Attack on Titan")
-print("D) Rent A Girlfriend")
-print("E) All of the Above")
-
-user_answer = input("Your answer: ").upper()
-
-if user_answer == "E":
-    print("Correct! 🎉\n")
-    score = score + 1
-else:
-    print("Wrong! The correct answer is E.\n")
-
-
-print("🏁 Quiz Finished!")
-total_questions = 4
-print(f"Your final score: {score}/{total_questions}")
-
-if score == 3:
-    print("🔥 Anime Master!")
-elif score == 2:
-    print("😄 Great job!")
-elif score == 1:
-    print("🙂 Not bad, keep watching anime!")
-else:
-    print("😅 Time for an anime marathon!")
+if __name__ == "__main__":
+    app.run(debug=True)
