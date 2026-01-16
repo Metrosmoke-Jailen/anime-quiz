@@ -98,21 +98,30 @@ const questions = [
 let index = 0;
 let score = 0;
 
+    function updateProgress() {
+        const progress = (currentQuestion / questions.length) * 100;
+        document.getElementById("progress-bar").style.width = progress + "%";
+    }
+
 function showQuestion() {
+    updateProgress(); // 👈 ADD THIS
+
     document.getElementById("feedback").innerText = "";
-    document.getElementById("question").innerText = questions[index].question;
+    document.getElementById("question").innerText =
+        questions[currentQuestion].question;
 
     const optionsDiv = document.getElementById("options");
     optionsDiv.innerHTML = "";
 
-    questions[index].options.forEach(opt => {
-        const btn = document.createElement("button");
-        btn.innerText = opt;
-        btn.onclick = () => checkAnswer(opt[0]);
-        optionsDiv.appendChild(btn);
+    questions[currentQuestion].options.forEach(option => {
+        const button = document.createElement("button");
+        button.innerText = option;
+        button.onclick = () => checkAnswer(option[0]);
+        optionsDiv.appendChild(button);
         optionsDiv.appendChild(document.createElement("br"));
     });
 }
+
 
 function checkAnswer(choice) {
     if (choice === questions[index].answer) {
@@ -146,10 +155,15 @@ function showResults() {
     else msg = "😅 Time for an anime marathon!";
 
     document.getElementById("finalMessage").innerText = msg;
+    document.getElementById("progress-bar").style.width = "100%";
 }
 
 showQuestion();
 </script>
+
+<div class="progress-container">
+    <div id="progress-bar"></div>
+</div>
 
 </body>
 </html>
