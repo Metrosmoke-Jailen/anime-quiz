@@ -98,11 +98,6 @@ const questions = [
 let index = 0;
 let score = 0;
 
-    function updateProgress() {
-        const progress = (currentQuestion / questions.length) * 100;
-        document.getElementById("progress-bar").style.width = progress + "%";
-    }
-
 function showQuestion() {
     updateProgress(); // 👈 ADD THIS
 
@@ -164,6 +159,13 @@ showQuestion();
 <div class="progress-container">
     <div id="progress-bar"></div>
 </div>
+
+<script>
+    function updateProgress() {
+        const progress = (currentQuestion / questions.length) * 100;
+        document.getElementById("progress-bar").style.width = progress + "%";
+    }
+</script>
 
 </body>
 </html>
