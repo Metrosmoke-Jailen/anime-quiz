@@ -196,9 +196,29 @@ function showResults() {
     else msg = "😅 Time for an anime marathon!";
 
     document.getElementById("finalMessage").innerText = msg;
+    document.getElementById("replayBtn").style.display = "inline-block";
+
 }
 
+    <button id="replayBtn" onclick="restartQuiz()" style="display:none;">
+    🔁 Play Again
+    </button>
+
 showQuestion();
+</script>
+
+<script>
+    function restartQuiz() {
+        currentQuestion = 0;
+        score = 0;
+
+        document.getElementById("finalScore").innerText = "";
+        document.getElementById("finalMessage").innerText = "";
+        document.getElementById("feedback").innerText = "";
+        document.getElementById("replayBtn").style.display = "none";
+
+        showQuestion();
+    }
 </script>
 
 </body>

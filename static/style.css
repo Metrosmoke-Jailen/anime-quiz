@@ -70,3 +70,14 @@ hr {
     margin: 25px auto;
     border: 1px solid #444;
 }
+
+#replayBtn {
+    background: #ffcc70;
+    color: #1a1a2e;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
+#replayBtn:hover {
+    background: #ffd98e;
+}
