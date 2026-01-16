@@ -1,83 +1,100 @@
+/* 🌌 Global Page Styling */
 body {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    color: #f5f5f5;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: radial-gradient(circle at top, #1b1b3a, #0f0f1f);
+    color: #ffffff;
     text-align: center;
     padding: 40px;
+    min-height: 100vh;
 }
 
-/* Main title */
+/* 🎮 Main Title */
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.6em;
+    color: #ffd369;
+    text-shadow: 0 0 10px rgba(255, 211, 105, 0.6);
     margin-bottom: 10px;
-    color: #ffcc70;
 }
 
-/* Subtitles */
-h2, h3 {
-    margin-top: 20px;
+/* 🧠 Quiz Container */
+#quiz-container {
+    background: linear-gradient(145deg, #16213e, #1f4068);
+    padding: 35px;
+    max-width: 650px;
+    margin: auto;
+    border-radius: 18px;
+    box-shadow:
+        0 0 20px rgba(0, 0, 0, 0.7),
+        inset 0 0 10px rgba(255, 255, 255, 0.05);
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Question text */
+/* ✨ Question Text */
 #question {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    color: #f5f5f5;
 }
 
-/* Buttons */
+/* 🎯 Answer Buttons */
 button {
-    background: #0f3460;
+    background: linear-gradient(135deg, #e94560, #ff6f91);
     color: white;
     border: none;
-    border-radius: 8px;
-    padding: 12px 18px;
-    margin: 6px 0;
-    width: 260px;
-    font-size: 1rem;
+    padding: 14px 20px;
+    margin: 10px auto;
+    width: 85%;
+    border-radius: 12px;
+    font-size: 16px;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    display: block;
 }
 
-/* Button hover effect */
+/* 🖱 Hover Effect */
 button:hover {
-    background: #e94560;
     transform: scale(1.05);
+    background: linear-gradient(135deg, #ff6f91, #ff9aa2);
+    box-shadow: 0 0 20px rgba(255, 111, 145, 0.7);
 }
 
-/* Feedback text */
+/* 🖱 Click Effect */
+button:active {
+    transform: scale(0.98);
+}
+
+/* 💬 Feedback Text */
 #feedback {
-    font-size: 1.1rem;
-    margin-top: 15px;
+    font-size: 1.3em;
+    margin-top: 20px;
+    min-height: 30px;
     font-weight: bold;
 }
 
-/* Final score */
+/* 🏁 Final Score */
 #finalScore {
-    font-size: 1.6rem;
-    margin-top: 30px;
-    color: #ffcc70;
-}
-
-/* Final message */
-#finalMessage {
-    font-size: 1.3rem;
-    margin-top: 10px;
-}
-
-/* Horizontal rule */
-hr {
-    width: 60%;
-    margin: 25px auto;
-    border: 1px solid #444;
-}
-
-#replayBtn {
-    background: #ffcc70;
-    color: #1a1a2e;
-    font-weight: bold;
     margin-top: 25px;
+    font-size: 1.8em;
+    color: #ffd369;
+    text-shadow: 0 0 8px rgba(255, 211, 105, 0.6);
 }
 
-#replayBtn:hover {
-    background: #ffd98e;
+/* 🌟 Final Message */
+#finalMessage {
+    font-size: 1.3em;
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+/* ✨ Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
