@@ -16,6 +16,21 @@ h1 {
     margin-bottom: 10px;
 }
 
+#start-screen {
+    background: linear-gradient(145deg, #1f4068, #16213e);
+    padding: 40px;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 1s ease-in-out;
+}
+
+#start-screen p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
 /* 🧠 Quiz Container */
 #quiz-container {
     background: linear-gradient(145deg, #16213e, #1f4068);
