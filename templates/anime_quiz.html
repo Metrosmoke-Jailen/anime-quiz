@@ -16,6 +16,8 @@
 <h2 id="finalScore"></h2>
 <h3 id="finalMessage"></h3>
 
+<button id="replayBtn" onclick="restartQuiz()">🔁 Play Again</button>
+
 <script>
 const questions = [
     {
@@ -199,10 +201,6 @@ function showResults() {
     document.getElementById("replayBtn").style.display = "inline-block";
 
 }
-
-    <button id="replayBtn" onclick="restartQuiz()" style="display:none;">
-    🔁 Play Again
-    </button>
     
     function restartQuiz() {
         currentQuestion = 0;
@@ -215,6 +213,8 @@ function showResults() {
 
         showQuestion();
     }
+    
+    showQuestion();
 </script>
 
 </body>
