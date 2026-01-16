@@ -1,0 +1,73 @@
+/* Reset & base styling */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #f5f5f5;
+    text-align: center;
+    padding: 40px;
+}
+
+/* Main title */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #ffcc70;
+}
+
+/* Subtitles */
+h2, h3 {
+    margin-top: 20px;
+}
+
+/* Question text */
+#question {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+    background: #0f3460;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    margin: 6px 0;
+    width: 260px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background: #e94560;
+    transform: scale(1.05);
+}
+
+/* Feedback text */
+#feedback {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Final score */
+#finalScore {
+    font-size: 1.6rem;
+    margin-top: 30px;
+    color: #ffcc70;
+}
+
+/* Final message */
+#finalMessage {
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+/* Horizontal rule */
+hr {
+    width: 60%;
+    margin: 25px auto;
+    border: 1px solid #444;
+}
