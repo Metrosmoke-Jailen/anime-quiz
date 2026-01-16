@@ -70,22 +70,3 @@ hr {
     margin: 25px auto;
     border: 1px solid #444;
 }
-
-/* Progress bar container */
-.progress-container {
-    width: 60%;
-    background: #2c2c54;
-    border-radius: 20px;
-    margin: 20px auto;
-    height: 18px;
-    overflow: hidden;
-}
-
-/* Actual progress */
-#progress-bar {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #ffcc70, #e94560);
-    transition: width 0.4s ease;
-}
-
